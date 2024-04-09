@@ -163,4 +163,24 @@
 
 </script> 
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>   //The JavaScript code listens for a click event on the "Make Payment" button
+    $(document).ready(function() {
+        $('#make-payment').click(function() {
+            window.location.href = '/initiate_payment/';
+        });
+    });
+</script>
+
+
+
+<!-- JavaScript code to redirect to initiate_payment.html with query parameters -->
+<script>
+    // Retrieve amount and email data from your checkout.html fields
+    var amount = document.getElementById('amount').value;
+    var email = document.getElementById('email').value;
+
+    // Redirect to initiate_payment.html with the data as query parameters
+    window.location.href = '/initiate_payment.html?amount=' + encodeURIComponent(amount) + '&email=' + encodeURIComponent(email);
+</script>
 {% endblock content%}
